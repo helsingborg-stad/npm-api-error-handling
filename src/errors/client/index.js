@@ -1,0 +1,6 @@
+exports.BadRequestError = require('./BadRequestError')
+exports.ForbiddenError = require('./ForbiddenError')
+exports.NotFoundError = require('./NotFoundError')
+exports.RequestTimeoutError = require('./RequestTimeoutError')
+exports.UnauthorizedError = require('./UnauthorizedError')
+exports.UnprocessableEntityError = require('./UnprocessableEntityError')
