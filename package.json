@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src test",
+    "lint:fix": "eslint --fix src test",
     "build": "echo \"Error: no build command specified\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +13,9 @@
     "url": "git://https://github.com/helsingborg-stad/npm-api-error-handling"
   },
   "author": "Helsingborg Stad",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0"
+  }
 }
