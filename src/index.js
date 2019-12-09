@@ -24,6 +24,8 @@ const throwError = (statusCode, msg )=> {
   }
 };
 
+throwError(400)
+
 module.exports = {
     errors,
     throwError

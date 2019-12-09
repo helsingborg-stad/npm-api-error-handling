@@ -1,4 +1,4 @@
-const errorMessages = require('../../../assets/errorMessages')
+const errorMessages = require('../../assets/errorMessages')
 
 /**
  * DomainError
