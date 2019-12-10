@@ -19,7 +19,6 @@
   "engines": {
     "node": ">= 0.10"
   },
-  "author": "Helsingborg Stad",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^6.7.2",
