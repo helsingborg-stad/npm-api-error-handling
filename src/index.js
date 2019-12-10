@@ -25,6 +25,6 @@ const throwError = (statusCode, msg )=> {
 };
 
 module.exports = {
-    errors,
+    ...errors,
     throwError
 }
