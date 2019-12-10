@@ -1,19 +1,26 @@
 {
   "name": "@helsingborg-stad/npm-api-error-handling",
   "version": "0.0.0",
-  "description": "",
+  "description": "Error handling for Node js applications",
   "main": "index.js",
+  "repository": {
+    "url": "git://https://github.com/helsingborg-stad/npm-api-error-handling"
+  },
+  "bugs": {
+    "url": "https://github.com/helsingborg-stad/npm-api-error-handling/issues"
+  },
+  "author": "Helsingborg Stad",
   "scripts": {
     "lint": "eslint src test",
     "lint:fix": "eslint --fix src test",
     "build": "echo \"Error: no build command specified\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "url": "git://https://github.com/helsingborg-stad/npm-api-error-handling"
+  "engines": {
+    "node": ">= 0.10"
   },
   "author": "Helsingborg Stad",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^14.0.0"
