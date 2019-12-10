@@ -11,6 +11,8 @@
   },
   "author": "Helsingborg Stad",
   "scripts": {
+    "lint": "eslint src/**",
+    "lint:fix": "eslint --fix src/**",
     "build": "echo \"Error: no build command specified\" && exit 1",
     "test": "mocha tests/*.test.js"
   },
@@ -21,5 +23,9 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.2.2"
-  }
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0"
+    "eslint-plugin-import": "^2.19.1"
+  },
 }

@@ -1,2 +1,2 @@
-exports.BadGatewayError = require('./BadGatewayError')
-exports.InternalServerError = require('./InternalServerError')
+exports.BadGatewayError = require('./BadGatewayError');
+exports.InternalServerError = require('./InternalServerError');
