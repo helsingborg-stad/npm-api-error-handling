@@ -11,10 +11,20 @@
   },
   "author": "Helsingborg Stad",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src/**",
+    "lint:fix": "eslint --fix src/**",
+    "test": "mocha tests/*.test.js"
   },
   "engines": {
     "node": ">= 0.10"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0"
+    "eslint-plugin-import": "^2.19.1"
+  },
 }
