@@ -110,16 +110,6 @@ jobs:
         - store_artifacts:
             path: test-results/unit
 
-    build:
-        <<: *defaults  
-        steps:
-        - checkout
-
-        - run:
-            name: Build application
-            command: |
-                npm build
-
     set_pkg_number_release:
         <<: *defaults  
         steps:
@@ -134,20 +124,6 @@ jobs:
                 git push origin HEAD:master
                 git push --tags
 
-    set_pkg_number_beta:
-        <<: *defaults  
-        steps:
-
-        - checkout
-
-        - run:
-            name: Bump package version [beta]
-            command: |
-                git config user.name "CircleCI bot"
-                git config user.email "circleci@circleci"
-                npm version prerelease --preid=beta -m "Bumped version number to %s [ci skip]"
-                git push origin HEAD:develop
-                git push --tags
     publish:
         <<: *defaults
         steps:
@@ -167,51 +143,37 @@ jobs:
 
 
 workflows:
-  version: 2
-  build-master:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: 
-                - master
-                - develop
-                - /feature.*/
-      - unit:
-          filters:
-            branches:
-              only:
-                - master
-                - develop 
-                - /feature.*/
-      - lint:
-          filters:
-            branches:
-              only:
-                - master
-                - develop 
-                - /feature.*/
-      - publish:
-          filters:
-            branches:
-              only:
-                - master
-                - develop
-      - set_pkg_number_release:
-          filters:
-            branches:
-              only:
-                - master
-          requires:
-            - lint
-            - unit
-            - build
-      - set_pkg_number_beta:
-          filters:
-            branches:
-              only:
-                - develop
-          requires:
-            - lint
-            - unit
-            - build
+    version: 2
+    build-master:
+        jobs:
+            - unit:
+                filters:
+                    branches:
+                    only:
+                        - master
+                        - develop 
+                        - /feature.*/
+            - lint:
+                filters:
+                    branches:
+                    only:
+                        - master
+                        - develop 
+                        - /feature.*/
+            - set_pkg_number_release:
+                filters:
+                    branches:
+                    only:
+                        - develop
+                requires:
+                    - lint
+                    - unit
+            - publish:
+                filters:
+                    branches:
+                    only:
+                        - master
+                requires:
+                    - lint
+                    - unit
+                    - set_pkg_number_release
