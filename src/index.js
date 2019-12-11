@@ -1,11 +1,11 @@
-const errors = require('./errors')
+const errors = require('./errors');
 
 /**
  * A function for throwing an error based on a http status code
- * @param {number} statusCode 
- * @param {string} msg 
+ * @param {number} statusCode
+ * @param {string} msg
  */
-const throwError = (statusCode, msg )=> {
+const throwError = (statusCode, msg) => {
   switch (statusCode) {
     case 400:
       throw new errors.BadRequestError(msg);
@@ -25,6 +25,6 @@ const throwError = (statusCode, msg )=> {
 };
 
 module.exports = {
-    errors,
+    ...errors,
     throwError
 }
