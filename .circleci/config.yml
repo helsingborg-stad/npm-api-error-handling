@@ -149,31 +149,31 @@ workflows:
             - unit:
                 filters:
                     branches:
-                    only:
-                        - master
-                        - develop 
-                        - /feature.*/
+                        only:
+                            - master
+                            - develop 
+                            - /feature.*/
             - lint:
                 filters:
                     branches:
-                    only:
-                        - master
-                        - develop 
-                        - /feature.*/
+                        only:
+                            - master
+                            - develop 
+                            - /feature.*/
             - set_pkg_number_release:
                 filters:
                     branches:
-                    only:
-                        - master
-                        - develop
+                        only:
+                            - master
+                            - develop
                 requires:
                     - lint
                     - unit
             - publish:
                 filters:
                     branches:
-                    only:
-                        - master
+                        only:
+                            - master
                 requires:
                     - lint
                     - unit
