@@ -118,7 +118,7 @@ jobs:
                 command: |
                     git config user.name "CircleCI bot"
                     git config user.email "circleci@circleci"
-                    npm version minor -m "Bumped version number to %s [ci skip]"
+                    npm version minor -m "Bumped version number to %s"
                     git push origin HEAD:master
                     git push --tags
 
