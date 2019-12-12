@@ -1,6 +1,6 @@
 {
   "name": "@helsingborg-stad/npm-api-error-handling",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Error handling for Node js applications",
   "main": "src/index.js",
   "repository": {
