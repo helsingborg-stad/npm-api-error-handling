@@ -55,9 +55,7 @@ jobs:
 
             - run:
                 name: Running eslint
-                command: |
-                    mkdir -p test-results/eslint
-                    npm run lint
+                command: mkdir -p test-results/eslint && npm run lint
                 when: always
 
             # Persist temporary files (stored up to 30 days).
