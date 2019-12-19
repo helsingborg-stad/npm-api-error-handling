@@ -114,7 +114,7 @@ jobs:
             - checkout
 
             - run:
-                name: Bump package version [release]
+                name: Bump npm package version [release]
                 command: |
                     git config user.name "CircleCI bot"
                     git config user.email "circleci@circleci"
