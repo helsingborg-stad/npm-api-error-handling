@@ -108,8 +108,8 @@ jobs:
             - store_artifacts:
                 path: test-results/unit
 
-    set_pkg_number_release:
-        <<: *defaults  
+    publish:
+        <<: *defaults
         steps:
             - checkout
 
@@ -120,11 +120,6 @@ jobs:
                     git config user.email "circleci@circleci"
                     npm version minor -m "Bumped version number to %s [skip ci]"
                     git push origin HEAD:master
-
-    publish:
-        <<: *defaults
-        steps:
-            - checkout
             
             - run:
                 name: Set registry URL
@@ -157,15 +152,6 @@ workflows:
                             - master
                             - develop 
                             - /feature.*/
-            - set_pkg_number_release:
-                filters:
-                    branches:
-                        only:
-                            - master
-                            - develop
-                requires:
-                    - lint
-                    - unit
             - publish:
                 filters:
                     branches:
@@ -174,4 +160,3 @@ workflows:
                 requires:
                     - lint
                     - unit
-                    - set_pkg_number_release
