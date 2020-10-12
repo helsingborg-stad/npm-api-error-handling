@@ -15,6 +15,9 @@ describe('Testing throwError function', () => {
     it('Should throw 404 Resource Not Found Error', () => {
         expect(() => errors.throwError(404)).to.throw(errors.ResourceNotFoundError)
     });
+    it('Should throw 418 I\'m a teapot Entity Error', () => {
+        expect(() => errors.throwError(418)).to.throw(errors.IAmATeapotError)
+    });
     it('Should throw 422 Unprocessable Entity Error', () => {
         expect(() => errors.throwError(422)).to.throw(errors.UnprocessableEntityError)
     });
