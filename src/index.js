@@ -15,6 +15,8 @@ const throwError = (statusCode, msg) => {
       throw new errors.RequestTimeoutError(msg);
     case 404:
       throw new errors.ResourceNotFoundError(msg);
+    case 418:
+      throw new errors.ImATeapot(msg);
     case 422:
       throw new errors.UnprocessableEntityError(msg);
     case 502:
